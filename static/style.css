@@ -1,0 +1,456 @@
+body {
+    margin: 0;
+    /* Replace 'background_home.jpg' with your actual filename */
+    background: linear-gradient(rgba(15, 15, 15, 0.8), rgba(15, 15, 15, 0.8)),
+        url('greenblackbg.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    padding-top: 150px !important;
+}
+
+/* Top Navbar */
+.navbar-custom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    /* Using your photo */
+    background: url('header_bg.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: 2000;
+}
+
+
+.logo {
+    font-size: 60px;
+    font-family: 'UnifrakturCook', cursive;
+    letter-spacing: 3px;
+    text-decoration: none;
+    color: #ff0000;
+    /* Red core text */
+
+    /* 1. Green Sharp Outline | 2. Yellow Neon Highlight */
+    text-shadow:
+        1px 1px 0 #00ff00, -1px -1px 0 #00ff00,
+        1px -1px 0 #00ff00, -1px 1px 0 #00ff00,
+        /* These 4 create the green border */
+        0 0 12px #ffff00, 0 0 25px #ffff00;
+    /* These 2 create the yellow glow */
+
+    transition: 0.3s ease;
+}
+
+/* Optional: Make it glow even more when you hover over it */
+.logo:hover {
+    text-shadow: 0 0 20px #ffff00, 0 0 40px #ffff00;
+    color: #ff3333;
+}
+
+
+.menu-icon {
+    width: 60px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    display: block;
+    height: 6px;
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.menu-icon:hover span {
+    background-color: #00f5ff;
+}
+
+
+.menu-icon:hover {
+    color: #00f5ff;
+}
+
+
+/* Side Menu */
+/* Optimized Side Menu */
+.side-menu {
+    position: fixed;
+    top: 100px;
+    right: -250px;
+    /* Hidden state: fixed pixel width */
+    width: 250px;
+    /* Defined width based on text length */
+    height: calc(100% - 100px);
+    background: rgba(20, 20, 20, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding-top: 20px;
+    transition: 0.4s;
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    z-index: 1500;
+    border-left: 1px solid rgba(0, 245, 255, 0.2);
+}
+
+.side-menu.active {
+    right: 0;
+}
+
+.side-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    /* Slightly smaller, cleaner text */
+    margin: 15px 0;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+/* Push content below navbar */
+.main-content {
+    padding-top: 180px;
+    padding-left: 40px;
+    padding-right: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-split {
+    padding-top: 40px;
+    padding-bottom: 20px;
+    /* Added this to PUSH the About section down */
+    min-height: 300px;
+    /* Fixed height ensures space for the title */
+    display: flex;
+    align-items: center;
+}
+
+
+.hero-subtitle {
+    font-size: 24px;
+    margin-top: 10px;
+    color: #cccccc;
+    text-align: left;
+}
+
+/* The Glassmorphism Problem Box */
+.problem-box {
+    /* Layer 1: Dark tint overlay | Layer 2: Your image */
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('red_greeenbg.jpg') no-repeat center center;
+    background-size: cover;
+
+    /* Glassmorphism effects */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+    border: 1px solid rgba(0, 245, 255, 0.4);
+    padding: 25px;
+    border-radius: 15px;
+    max-width: 280px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: 0.3s ease-in-out;
+    overflow: hidden;
+    /* Ensures the image doesn't bleed past corners */
+}
+
+.problem-box:hover {
+    transform: translateY(-5px);
+    border-color: #00f5ff;
+    /* Adds a cyan glow to the whole box on hover */
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+}
+
+.problem-box h3 {
+    color: #00f5ff;
+    font-size: 22px;
+    /* Smaller font to prevent horizontal overflow */
+    margin-bottom: 10px;
+}
+
+
+
+/* Login Container Box */
+.login-container {
+    /* Layer 1: Dark tint (80% opacity) | Layer 2: Your .jpg image */
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url('red_greeenbg.jpg') no-repeat center center;
+    background-size: cover;
+
+    /* Keeps the glass effect on the edges */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(0, 245, 255, 0.3);
+    padding: 40px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    /* Ensures the image doesn't bleed out of the rounded corners */
+}
+
+.login-container .form-label {
+    color: #00f5ff;
+    /* Cyan labels look great against dark photo backgrounds */
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.login-container h2 {
+    text-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
+}
+
+/* Toggle Switch Styling */
+.role-toggle {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-role {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.btn-role.active {
+    background: #00f5ff;
+    color: #0f0f0f;
+}
+
+/* Input Focus Glow */
+.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-color: #00f5ff;
+    box-shadow: 0 0 10px rgba(0, 245, 255, 0.2);
+    color: white;
+}
+
+
+.about-section-expanded {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 20px;
+    border-radius: 15px;
+    border-left: 4px solid #00f5ff;
+    margin-top: 0px;
+    /* Pulls it up further */
+}
+
+.about-section ul li {
+    margin-bottom: 8px;
+    list-style-type: square;
+}
+
+.about-section ul li strong {
+    color: #00f5ff;
+    /* Matches your brand cyan */
+}
+
+/* Expanded About Section styling */
+.about-section-expanded {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 30px;
+    border-radius: 15px;
+    border-left: 4px solid #00f5ff;
+}
+
+/* Notification Box Styling (25% area) */
+.notification-box {
+    /* Layer 1: Dark tint | Layer 2: Your image */
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+        url('red_greeenbg.jpg') no-repeat center center;
+    background-size: cover;
+
+    /* Glassmorphism effects */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    border: 1px solid rgba(0, 245, 255, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    height: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* Ensure the title inside stands out against the image */
+.notification-box h4 {
+    color: #00f5ff;
+    border-bottom: 1px solid rgba(0, 245, 255, 0.3);
+    padding-bottom: 10px;
+    text-shadow: 0 0 8px rgba(0, 245, 255, 0.5);
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+
+.notif-item {
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.notif-item p {
+    font-size: 14px;
+    margin-top: 2px;
+    color: #ffffff;
+    /* Bright white for better contrast */
+    font-weight: 400;
+}
+
+.notif-item .text-info {
+    color: #00f5ff !important;
+    /* Brighter cyan for the date */
+    font-weight: bold;
+}
+
+/* Custom Scrollbar for Notifications */
+.notification-box::-webkit-scrollbar {
+    width: 5px;
+}
+
+.notification-box::-webkit-scrollbar-thumb {
+    background: #00f5ff;
+    border-radius: 10px;
+}
+
+/* Full-width Banner for Title Only */
+.title-banner {
+    /* Replace 'your_image.jpeg' with your actual filename */
+    background: url('background4.jpg') no-repeat center center;
+    background-size: cover;
+
+    width: 100vw;
+    /* Full window width */
+    margin-left: -40px;
+    /* Offsets the .main-content padding-left */
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-bottom: 30px;
+    /* Space before subtitle/register button */
+
+    border-top: 1px solid rgba(0, 245, 255, 0.2);
+    border-bottom: 1px solid rgba(0, 245, 255, 0.2);
+
+    /* Optional: adds a dark tint so text stays readable */
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+}
+
+/* Ensure the title inside has no extra margins pushing the banner down */
+.hero-title {
+    margin: 0;
+    font-size: 72px;
+    font-weight: bold;
+    text-align: left;
+
+    /* Change this line to match your subheadings */
+    color: #00f5ff;
+
+    /* Optional: Add a subtle glow to make it pop like the others */
+    text-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
+}
+
+.timeline-container {
+    /* 1. Added a vibrant cyan tint and reduced black opacity to let the image shine */
+    margin-top: 69px;
+    background: linear-gradient(135deg, rgba(0, 245, 255, 0.15) 0%, rgba(0, 0, 0, 0.85) 50%, rgba(0, 0, 0, 0.95) 100%),
+        url('motion_graphics.jpeg') no-repeat center center;
+    background-size: cover;
+
+    padding: 80px 40px;
+    border-radius: 20px;
+
+    /* 2. Brighter border with a neon glow */
+    border: 1px solid rgba(0, 245, 255, 0.5);
+    box-shadow: 0 0 30px rgba(0, 245, 255, 0.2), inset 0 0 20px rgba(0, 245, 255, 0.1);
+
+    /* 3. Smooth transition for interactions */
+    transition: all 0.5s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 4. Optional: Add a "moving light" effect on hover */
+.timeline-container:hover {
+    border-color: #00f5ff;
+    box-shadow: 0 0 50px rgba(0, 245, 255, 0.4);
+}
+
+.roadmap {
+    position: relative;
+    max-width: 550px;
+    /* Tight boundary for the inner surface */
+    padding-left: 50px;
+}
+
+/* Updated positioning for the vertical line to stay centered relative to the narrowed box */
+.roadmap::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #00f5ff, #7000ff, transparent);
+    box-shadow: 0 0 15px rgba(0, 245, 255, 0.8);
+}
+
+.roadmap-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+/* Ensure icons stay aligned with the vertical line */
+.roadmap-icon {
+    position: absolute;
+    left: -55px;
+    /* Adjusted to match the new padding-left of .roadmap */
+    top: 0;
+    width: 30px;
+    height: 30px;
+    background: #0f0f0f;
+    border: 2px solid #00f5ff;
+    border-radius: 50%;
+    color: #00f5ff;
+    text-align: center;
+    line-height: 26px;
+    font-weight: bold;
+    z-index: 2;
+    box-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
+}
+
+.roadmap-content {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 15px 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s ease;
+    margin-left: 10px;
+}
+
+.roadmap-item:hover .roadmap-content {
+    border-color: #00f5ff;
+    /* Subtle movement to the right when hovered */
+    transform: translateX(5px);
+    background: rgba(0, 245, 255, 0.05);
+}

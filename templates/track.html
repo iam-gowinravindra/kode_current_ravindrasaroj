@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container d-flex justify-content-center mt-5">
+    <div class="login-container" style="max-width: 500px; width: 100%;">
+        <h2 class="text-center mb-4" style="color: #00f5ff;">Track Your Submission</h2>
+
+        <div class="mt-4 p-4"
+            style="background: rgba(255, 255, 255, 0.03); border-radius: 12px; border: 1px solid rgba(0, 245, 255, 0.2);">
+            <h5 style="color: #00f5ff;">Status: <span class="text-white">Under Review</span></h5>
+            <p class="text-secondary mt-2">Our judges are currently reviewing your project. Check back soon for updates
+                on your ranking.</p>
+
+            <hr style="border-color: rgba(255, 255, 255, 0.1);">
+
+        </div>
+
+        <div class="mt-4 text-center">
+            <a href="/" class="btn btn-outline-light btn-sm">Return Home</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

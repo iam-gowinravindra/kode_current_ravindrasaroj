@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="height: 120px;"></div>
+
+<div class="login-container mx-auto" style="max-width: 600px; margin-bottom: 50px;">
+    <h2 class="text-center mb-4" style="color: #00f5ff; text-shadow: none;">
+        Team Registration
+    </h2>
+
+    <form action="/register" method="POST">
+        <div class="mb-4">
+            <label class="form-label" style="color: #00f5ff;">College Name</label>
+            <input type="text" name="college_name" class="form-control" placeholder="e.g., RGIPT" required
+                style="background-color: #1e1f26; color: white !important; border: 1px solid rgba(255, 255, 255, 0.1);">
+        </div>
+
+        <div class="mb-4">
+            <label class="form-label">Team Name</label>
+            <input type="text" name="team_name" class="form-control" placeholder="Unique Team Name" required
+                style="background-color: #1e1f26; color: white !important; border: 1px solid rgba(255, 255, 255, 0.1);">
+        </div>
+
+        <hr style="border-color: rgba(255, 255, 255, 0.2);">
+
+        <h5 style="color: #00ff00; margin-bottom: 15px;">Team Leader (Member 1)</h5>
+        <div class="mb-3">
+            <input type="text" name="leader_name" class="form-control mb-2" placeholder="Full Name" required
+                style="background-color: #1e1f26; color: white !important; border: 1px solid rgba(255, 255, 255, 0.1);">
+            <input type="text" name="leader_roll" class="form-control mb-2" placeholder="Roll Number" required
+                style="background-color: #1e1f26; color: white !important; border: 1px solid rgba(255, 255, 255, 0.1);">
+            <input type="tel" name="leader_phone" class="form-control mb-2" placeholder="Phone Number" required
+                style="background-color: #1e1f26; color: white !important; border: 1px solid rgba(255, 255, 255, 0.1);">
+            <input type="email" name="leader_email" class="form-control" placeholder="Leader Email" required
+                style="background-color: #1e1f26; color: white !important; border: 1px solid rgba(255, 255, 255, 0.1);">
+        </div>
+
+        <hr style="border-color: rgba(255, 255, 255, 0.2);">
+
+        <h5 style="color: #00f5ff; margin-bottom: 15px;">Other Members</h5>
+
+        <div class="mb-4">
+            <label class="form-label">Member 2</label>
+            <input type="text" name="member2_name" class="form-control mb-2" placeholder="Member 2 Full Name"
+                style="background-color: #1e1f26; color: white !important; border: 1px solid rgba(255, 255, 255, 0.1);">
+            <input type="email" name="member2_email" class="form-control" placeholder="Member 2 Email Address"
+                style="background-color: #1e1f26; color: white !important; border: 1px solid rgba(255, 255, 255, 0.1);">
+        </div>
+
+        <div class="mb-4">
+            <label class="form-label">Member 3</label>
+            <input type="text" name="member3_name" class="form-control mb-2" placeholder="Member 3 Full Name"
+                style="background-color: #1e1f26; color: white !important; border: 1px solid rgba(255, 255, 255, 0.1);">
+            <input type="email" name="member3_email" class="form-control" placeholder="Member 3 Email Address"
+                style="background-color: #1e1f26; color: white !important; border: 1px solid rgba(255, 255, 255, 0.1);">
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 mt-4 py-2"
+            style="font-weight: bold; background-color: #0d6efd; border: none;">
+            Complete Registration
+        </button>
+    </form>
+</div>
+
+<style>
+    input::placeholder {
+        color: rgba(255, 255, 255, 0.5) !important;
+    }
+</style>
+{% endblock %}

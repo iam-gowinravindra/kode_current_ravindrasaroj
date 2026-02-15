@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container d-flex justify-content-center mt-5">
+    <div class="login-container" style="max-width: 500px; width: 100%;">
+        <h2 class="text-center mb-4" style="color: #00f5ff;">Project Submission</h2>
+
+        <form>
+            <div class="mb-3">
+                <label class="form-label">Team Name</label>
+                <input type="text" class="form-control bg-dark text-white border-secondary"
+                    placeholder="Enter team name" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">GitHub Repository Link</label>
+                <input type="url" class="form-control bg-dark text-white border-secondary"
+                    placeholder="https://github.com/..." required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Demo Video Link</label>
+                <input type="url" class="form-control bg-dark text-white border-secondary"
+                    placeholder="YouTube or Drive link" required>
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label">Brief Description</label>
+                <textarea class="form-control bg-dark text-white border-secondary" rows="3"
+                    placeholder="Explain your solution..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Submit Project</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
