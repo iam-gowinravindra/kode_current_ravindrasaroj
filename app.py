@@ -61,9 +61,6 @@ def login():
 
 
 
-
-if __name__ == '__main__':
-    # host='0.0.0.0' allows other computers on the same Wi-Fi to connect
-    app.run(host='0.0.0.0', port=5000, debug=True)
+app = app
 
 
